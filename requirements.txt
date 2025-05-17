@@ -1,0 +1,8 @@
+Flask
+SQLModel              # Pydantic + SQLAlchemy based ORM
+alembic              # DB migrations
+python-dotenv
+gunicorn
+Flask-WTF
+Flask-Login
+psycopg2-binary
