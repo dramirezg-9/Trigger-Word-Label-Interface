@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Users List{% endblock %}
+
+{% block content %}
+  <h1>Users</h1>
+  <table class="table-auto w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="px-4 py-2 border">ID</th>
+        <th class="px-4 py-2 border">Name</th>
+        <th class="px-4 py-2 border">Email</th>
+        <th class="px-4 py-2 border">Joined</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr class="hover:bg-gray-50">
+          <td class="px-4 py-2 border">{{ user.id }}</td>
+          <td class="px-4 py-2 border">{{ user.name }}</td>
+          <td class="px-4 py-2 border">{{ user.email }}</td>
+          <td class="px-4 py-2 border">{{ user.created_at.strftime('%Y-%m-%d') }}</td>
+        </tr>
+      {% else %}
+        <tr>
+          <td class="px-4 py-2 border text-center" colspan="4"><em>No users found.</em></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
